@@ -23,8 +23,8 @@ def tap(x, y):
     if not inside(ball):
         ball.x = -199
         ball.y = -199
-        speed.x = (x + 200) / 25
-        speed.y = (y + 200) / 25
+        speed.x = (x + 200) / 15
+        speed.y = (y + 200) / 15
 
 
 def inside(xy):
@@ -49,19 +49,19 @@ def draw():
 
 def move():
     """Move ball and targets."""
-    if randrange(40) == 0:
+    if randrange(30) == 0:
         y = randrange(-150, 150)
         target = vector(200, y)
         targets.append(target)
 
     for target in targets:
-        target.x -= 0.5
+        target.x -= 1.5
         if not inside(target):
             target.x = 200
             target.y = randrange(-150, 150)
 
     if inside(ball):
-        speed.y -= 0.35
+        speed.y -= 0.5
         ball.move(speed)
         if not inside(ball):
             ball.x, ball.y = -200, -200
@@ -76,7 +76,7 @@ def move():
 
     draw()
 
-    ontimer(move, 50)
+    ontimer(move, 30)
 
 
 setup(420, 420, 370, 0)
