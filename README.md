@@ -1,0 +1,1 @@
+Es un juego de tiro parabólico, está hecho con Python y usa la librería Freegames. A este código le agregamos que, aunque la pelota salga de la pantalla, el juego nunca termine y que el movimiento sea más rápido.
